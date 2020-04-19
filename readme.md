@@ -45,7 +45,7 @@ class Example extends Component {
             name: tweet.user.name
           },
           text: tweet.text,
-          date: '3:32 PM · Feb 14, 1997',
+          date: Date.now(),
           retweets: tweet.retweet_count,
           likes: tweet.favorite_count
         }}
