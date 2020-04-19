@@ -108,7 +108,8 @@ const shareAction = (
 )
 
 export function Tweet(props) {
-  const [text, setText] = useState(props.config.text)
+  const { config = {}, className, ...rest } = props
+  const [text, setText] = useState(config.text)
 
   useEffect(() => {
     setText(
@@ -153,22 +154,22 @@ export function Tweet(props) {
             )
           },
         },
-      ])(props.config.text)
+      ])(config.text)
     )
-  }, [props.config.text])
+  }, [config.text])
 
-  const display = ['default', 'dim', 'lightsout'].includes(props.config.display)
-    ? props.config.display
+  const theme = ['default', 'dim', 'lightsout'].includes(config.theme)
+    ? config.theme
     : 'default'
 
   return (
-    <div className={cs(styles.tweet, styles[display])}>
+    <div className={cs(styles.tweet, styles[theme], className)} {...rest}>
       <div className={styles['user-info']}>
         <div className={styles['avatar-container']}>
           <img
             className={styles.avatar}
-            src={props.config.user.avatar}
-            alt={props.config.user.name}
+            src={config.user.avatar}
+            alt={config.user.name}
           />
         </div>
 
@@ -180,53 +181,46 @@ export function Tweet(props) {
               options={{ className: styles['twemoji-sm'] }}
               className={styles['user-name-txt']}
             >
-              <span className={styles.link}>{props.config.user.name}</span>
+              <span className={styles.link}>{config.user.name}</span>
             </Twemoji>
 
-            {props.config.user.verified && verifiedIcon}
+            {config.user.verified && verifiedIcon}
 
-            {props.config.user.locked &&
-              !props.config.user.verified &&
-              lockIcon}
+            {config.user.locked && !config.user.verified && lockIcon}
           </div>
 
-          <div className={styles['user-nickname']}>
-            @{props.config.user.nickname}
-          </div>
+          <div className={styles['user-nickname']}>@{config.user.nickname}</div>
         </div>
       </div>
 
       <div className={styles['tweet-text']}>
         {text && <div className={styles.txt}>{text}</div>}
 
-        {props.config.image && (
+        {config.image && (
           <div className={styles['image-container']}>
-            <img src={props.config.image} alt='Tweet image' />
+            <img src={config.image} alt='Tweet image' />
           </div>
         )}
       </div>
 
       <div className={styles['date-app-details']}>
-        {props.config.date}
+        {config.date}
 
-        {props.config.app && (
+        {config.app && (
           <>
             {' '}
-            ·{' '}
-            <span className={cs(styles.link, styles.app)}>
-              {props.config.app}
-            </span>
+            · <span className={cs(styles.link, styles.app)}>{config.app}</span>
           </>
         )}
       </div>
 
       <div className={styles['rt-likes']}>
         <span className={cs(styles.link, styles['num-rts'])}>
-          <strong>{styleNumber(props.config.retweets)}</strong> Retweets
+          <strong>{styleNumber(config.retweets)}</strong> Retweets
         </span>
 
         <span className={cs(styles.link, styles['num-likes'])}>
-          <strong>{styleNumber(props.config.likes)}</strong> Likes
+          <strong>{styleNumber(config.likes)}</strong> Likes
         </span>
       </div>
 
