@@ -6,10 +6,11 @@
 
 This project is a fork of [fake-tweet](https://github.com/lluiscamino/fake-tweet) by [Lluís Camino](https://github.com/lluiscamino) with the following improvements:
 
-- Fixes misc style issues
 - Uses CSS modules to not pollute CSS namespace
 - Allows you to override className, style, etc on root element
 - Smaller bundle size via microbundle
+- Fixes some style issues
+- Used in production by [twitter-search.io](https://twitter-search.io)
 
 ## Install
 

@@ -3,6 +3,7 @@ import Twemoji from 'react-twemoji'
 import cs from 'classnames'
 import processString from 'react-process-string'
 import styles from './styles.module.css'
+import dayjs from 'dayjs'
 
 function styleNumber(num) {
   let div = num / 1000000
@@ -18,6 +19,10 @@ function styleNumber(num) {
     )
   }
   return num
+}
+
+function renderDate(date) {
+  return dayjs(date).format('h:mm A · MMMM D, YYYY')
 }
 
 const verifiedIcon = (
@@ -162,6 +167,13 @@ export function Tweet(props) {
     ? config.theme
     : 'default'
 
+  const dateAppDetails = [
+    config.date && renderDate(config.date),
+    <span key='app' className={cs(styles.link, styles.app)}>
+      {config.app || 'Twitter Web App'}
+    </span>
+  ].filter(Boolean)
+
   return (
     <div className={cs(styles.tweet, styles[theme], className)} {...rest}>
       <div className={styles['user-info']}>
@@ -203,16 +215,16 @@ export function Tweet(props) {
         )}
       </div>
 
-      <div className={styles['date-app-details']}>
-        {config.date}
-
-        {config.app && (
-          <>
-            {' '}
-            · <span className={cs(styles.link, styles.app)}>{config.app}</span>
-          </>
-        )}
-      </div>
+      {dateAppDetails && dateAppDetails.length && (
+        <div className={styles['date-app-details']}>
+          {dateAppDetails.map((d, i) => (
+            <React.Fragment key={i}>
+              {d}
+              {i < dateAppDetails.length - 1 && ' · '}
+            </React.Fragment>
+          ))}
+        </div>
+      )}
 
       <div className={styles['rt-likes']}>
         <span className={cs(styles.link, styles['num-rts'])}>
