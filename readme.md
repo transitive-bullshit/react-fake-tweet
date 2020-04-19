@@ -4,6 +4,10 @@
 
 [![NPM](https://img.shields.io/npm/v/react-fake-tweet.svg)](https://www.npmjs.com/package/react-fake-tweet) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/transitive-bullshit/react-fake-tweet/master/example-0.png" alt="Example fake tweet" width="608" />
+</p>
+
 This project is a fork of [fake-tweet](https://github.com/lluiscamino/fake-tweet) by [Lluís Camino](https://github.com/lluiscamino) with the following improvements:
 
 - Uses CSS modules to not pollute CSS namespace
