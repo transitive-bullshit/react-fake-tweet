@@ -125,7 +125,7 @@ export function Tweet(props) {
                 </span>
               </span>
             )
-          },
+          }
         },
         {
           regex: /(?:^|[^a-zA-Z0-9_＠!@#$%&*])(?:#(?!\/))([a-zA-Z0-9/_]{1,280})(?:\b(?!#)|$)/,
@@ -138,7 +138,7 @@ export function Tweet(props) {
                 </span>
               </span>
             )
-          },
+          }
         },
         {
           regex: /(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/,
@@ -152,8 +152,8 @@ export function Tweet(props) {
                 {result[1]}
               </Twemoji>
             )
-          },
-        },
+          }
+        }
       ])(config.text)
     )
   }, [config.text])

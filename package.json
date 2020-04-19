@@ -1,7 +1,7 @@
 {
   "name": "react-fake-tweet",
   "version": "0.1.0",
-  "description": "Made with create-react-library",
+  "description": "React renderer for tweets.",
   "author": "transitive-bullshit",
   "license": "MIT",
   "repository": "transitive-bullshit/react-fake-tweet",
