@@ -154,8 +154,8 @@
   border-radius: 50%;
   margin: auto;
   fill: rgb(101, 119, 134);
-  height: 1.5em;
-  width: 1.6em;
+  height: 22px;
+  width: 22px;
   transition: 0.2s;
 }
 
