@@ -21,7 +21,10 @@
 
 .user-name-txt {
   display: inline;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
+
 .user-nickname {
   cursor: pointer;
   color: rgb(101, 119, 134);
@@ -196,11 +199,12 @@
 
 .twemoji-sm,
 .twemoji-bg {
-  position: relative;
-  top: 4px;
+  display: inline-block;
 }
 
 .twemoji-sm {
+  position: relative;
+  top: -2px;
   height: 18px;
   width: 18px;
 }

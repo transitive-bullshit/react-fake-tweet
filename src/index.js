@@ -170,9 +170,11 @@ export function Tweet(props) {
 
   const dateAppDetails = [
     config.date && renderDate(config.date),
-    <span key='app' className={cs(styles.link, styles.app)}>
-      {config.app || 'Twitter Web App'}
-    </span>
+    config.app && (
+      <span key='app' className={cs(styles.link, styles.app)}>
+        {config.app}
+      </span>
+    )
   ].filter(Boolean)
 
   return (
