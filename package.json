@@ -14,7 +14,7 @@
   "scripts": {
     "build": "microbundle-crl --no-compress --format modern,cjs",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
-    "prepublish": "run-s build",
+    "prepare": "run-s build",
     "test": "run-s test:unit test:lint test:build",
     "test:build": "run-s build",
     "test:lint": "eslint .",
@@ -24,6 +24,7 @@
     "deploy": "gh-pages -d example/build"
   },
   "peerDependencies": {
+    "prop-types": "^15.7.2",
     "react": "^16.0.0"
   },
   "devDependencies": {
@@ -53,7 +54,8 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "dayjs": "^1.8.24",
+    "lodash.isequal": "^4.5.0",
     "react-process-string": "^1.2.0",
-    "react-twemoji": "^0.2.3"
+    "twemoji": "^12.1.5"
   }
 }

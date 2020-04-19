@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import Twemoji from 'react-twemoji'
-import cs from 'classnames'
 import processString from 'react-process-string'
-import styles from './styles.module.css'
 import dayjs from 'dayjs'
+import cs from 'classnames'
+
+import Twemoji from './twemoji'
+import styles from './styles.module.css'
 
 function styleNumber(num) {
   let div = num / 1000000
