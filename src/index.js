@@ -3,7 +3,7 @@ import processString from 'react-process-string'
 import dayjs from 'dayjs'
 import cs from 'classnames'
 
-import Twemoji from './twemoji'
+import Twemoji from './Twemoji'
 import styles from './styles.module.css'
 
 function styleNumber(num) {
