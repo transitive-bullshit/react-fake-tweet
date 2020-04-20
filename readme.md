@@ -55,6 +55,13 @@ class Example extends Component {
 }
 ```
 
+## Related
+
+- [react-tweet-embed](https://github.com/capaj/react-tweet-embed) - Embeds a tweet using the official Twitter embedding SDK.
+  - Significantly more accurate and robust
+  - Slightly more heavy-weight
+  - No way that I'm aware of to the resulting tweet's contents
+
 ## License
 
 MIT © [transitive-bullshit](https://github.com/transitive-bullshit)
