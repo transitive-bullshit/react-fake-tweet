@@ -55,6 +55,7 @@
 .tweet-text .txt {
   padding-bottom: 15px;
   line-height: 1.3125;
+  white-space: pre-line;
 }
 
 .date-app-details {
